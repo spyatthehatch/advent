@@ -21,11 +21,6 @@ public class Coordinate {
 	private int y;
 	
 	/**
-	 * ID.
-	 */
-	private int id;
-	
-	/**
 	 * Number of points this Coordinate has within its area.
 	 */
 	private int pointCount;
@@ -39,7 +34,6 @@ public class Coordinate {
 	public Coordinate(final String s, int id) {
 		this.x = Integer.valueOf(StringUtils.substringBefore(s,"," ));
 		this.y = Integer.valueOf(StringUtils.substringAfter(s, " "));
-		this.id = id;
 		this.pointCount = 0;
 	}
 	

@@ -139,7 +139,8 @@ public class Day05 extends AbstractDay {
 			}
 		}
 		
-		LOGGER.trace("The smallest result is: " + smallest);
+		LOGGER.debug("Day 5, Puzzle 2: the smallest result is: " + smallest);
+		this.solutionTwo = String.valueOf(smallest);
 	}
 	
 	/**

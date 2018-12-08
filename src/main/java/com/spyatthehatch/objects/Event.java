@@ -9,6 +9,12 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/**
+ * Event object.
+ * 
+ * @author Bill Everton
+ * @version Advent 2018
+ */
 public class Event implements Comparable<Event>{
 	/**
 	 * Logger.
@@ -16,16 +22,36 @@ public class Event implements Comparable<Event>{
 	private static final Logger LOGGER = 
 	   LoggerFactory.getLogger(Event.class);
 	   
-	private static final String DATE_FORMAT = "[yyyy-MM-dd HH:mm";
-	
+	/**
+	 * Enum of actions possible for an event.
+	 */
 	public enum Action {START, AWAKE, ASLEEP};
 	
+	/**
+	 * Date format.
+	 */
+	private static final String DATE_FORMAT = "[yyyy-MM-dd HH:mm";
+	
+	/**
+	 * Guard ID for this event.
+	 */
 	private int guardId;
 	
+	/**
+	 * Action taken for this event.
+	 */
 	private Action action;
 	
+	/**
+	 * Event date time group.
+	 */
 	private Date dtg;
 	
+	/**
+	 * Constructor.
+	 * 
+	 * @param s Raw string input for this event.
+	 */
 	public Event (final String s) {
 		final String[] event = s.split("]");
 		
@@ -39,7 +65,8 @@ public class Event implements Comparable<Event>{
 		
 		if(message[1].equals("Guard")) {
 			this.action = Action.START;
-			this.guardId = Integer.valueOf(StringUtils.substringAfter(message[2], "#"));
+			this.guardId = Integer.valueOf(StringUtils.substringAfter(message[2],
+				"#"));
 		}
 		
 		else if(message[1].equals("falls")) {
@@ -51,6 +78,10 @@ public class Event implements Comparable<Event>{
 		}
 	}
 	
+	/**
+	 * Set the Guard ID.
+	 * @param id Guard ID.
+	 */
 	public void setGuardId(final int id) {
 		this.guardId = id;
 	}
@@ -59,23 +90,26 @@ public class Event implements Comparable<Event>{
 	 * @return the guardId
 	 */
 	public int getGuardId() {
-		return guardId;
+		return this.guardId;
 	}
 
 	/**
 	 * @return the action
 	 */
 	public Action getAction() {
-		return action;
+		return this.action;
 	}
 
 	/**
 	 * @return the dtg
 	 */
 	public Date getDtg() {
-		return dtg;
+		return this.dtg;
 	}
 
+	/**
+	 * Used for sorting, by date.
+	 */
 	public int compareTo(final Event e) {
 		return this.dtg.compareTo(e.getDtg());
 	}

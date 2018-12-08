@@ -166,7 +166,7 @@ public class Day04 extends AbstractDay {
 					
 					g.addMinutesAsleep(lastEvent.getDtg().getMinutes(), e.getDtg()
 						.getMinutes());
-					LOGGER.trace("Waking. Adding nap time for guard " + g.getId());
+					LOGGER.trace("Waking. Adding nap time for Guard " + g.getId());
 					
 					break;
 				default:
@@ -192,7 +192,7 @@ public class Day04 extends AbstractDay {
 		
 		final int id = sleepyGuard.getId();
 		final int sleepiestMinute = sleepyGuard.getSleepiestMinute();
-		LOGGER.debug("Guard#" + id + " sleepiest minute is " + sleepiestMinute);
+		LOGGER.debug("Guard " + id + " sleepiest minute is " + sleepiestMinute);
 		LOGGER.trace("Hash equals: " + id * sleepiestMinute);
 		this.solutionOne = String.valueOf(id * sleepiestMinute);
 	}
@@ -239,7 +239,7 @@ public class Day04 extends AbstractDay {
 		
 		final int id = sleepyGuard.getId();
 		final int sleepiestMinute = sleepyGuard.getSleepiestMinute();
-		LOGGER.debug("Guard#" + id + " sleepiest minute is " + sleepiestMinute);
+		LOGGER.debug("Guard " + id + " sleepiest minute is " + sleepiestMinute);
 		LOGGER.trace("Hash equals: " + id * sleepiestMinute);
 		this.solutionTwo = String.valueOf(id * sleepiestMinute);
 	}
