@@ -52,7 +52,7 @@ public class ResourceReaderTest {
 		assertEquals("FAIL: did not receive expected size of 963 elements.",
 			963, rawList.size());
 		
-		LOGGER.trace("PASS: received expected number of elements.");
+		LOGGER.trace("PASS: testSizeExpect963Elements complete.");
 	}
 	
 	/**
@@ -66,7 +66,7 @@ public class ResourceReaderTest {
 		}
 		assertEquals("FAIL: did not sum to expected value of 411.", 411, sum);
 		
-		LOGGER.trace("PASS: received expected sum value.");
+		LOGGER.trace("PASS: testSumExpect411 complete.");
 	}
 	
 	/**

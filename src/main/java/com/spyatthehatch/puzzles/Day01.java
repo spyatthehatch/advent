@@ -38,7 +38,7 @@ public class Day01 extends AbstractDay {
 	*/
 	
 	/**
-	 * Puzzle resource, list of "frequencies".
+	 * Puzzle resource, list of frequencies.
 	 */
 	public static final String RESOURCE = "puzzles/day1-list.txt";
 	

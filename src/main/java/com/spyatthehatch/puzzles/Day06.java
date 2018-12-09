@@ -32,7 +32,7 @@ public class Day06 extends AbstractDay {
 	*/
 	
 	/**
-	 * Puzzle resource, list of fabric claims.
+	 * Puzzle resource, list of coordinates.
 	 */
 	public static final String RESOURCE = "puzzles/day6-list.txt";
 	

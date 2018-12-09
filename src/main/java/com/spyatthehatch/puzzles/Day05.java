@@ -25,7 +25,7 @@ public class Day05 extends AbstractDay {
 	*/
 	
 	/**
-	 * Puzzle resource, list of fabric claims.
+	 * Puzzle resource, list of polymers.
 	 */
 	public static final String RESOURCE = "puzzles/day5-list.txt";
 	

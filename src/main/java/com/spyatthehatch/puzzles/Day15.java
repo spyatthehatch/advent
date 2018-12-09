@@ -1,5 +1,9 @@
 package com.spyatthehatch.puzzles;
 
+import java.util.List;
+
+import com.spyatthehatch.util.ResourceReader;
+
 /**
  * Day fifteen solutions.
  * 
@@ -7,24 +11,46 @@ package com.spyatthehatch.puzzles;
  * @version Advent 2018
  */
 public class Day15 extends AbstractDay {
+	/*
+	
+	
+	*/
+	
+	/**
+	 * Puzzle resource.
+	 */
+	public static final String RESOURCE = "puzzles/day15-list.txt";
+	
 	/**
 	 * Constructor for Day 15 puzzles.
 	 */
 	public Day15() {
-		
+		this.dayNum = "15";
+		final ResourceReader reader = new ResourceReader(RESOURCE);
+		final List<String> input = reader.toList();
 	}
 	
 	/**
 	 * Puzzle one solution.
 	 */
 	public void puzzleOne() {
+		/*
 		
+		
+		*/
+		
+		this.solutionOne = "foo";
 	}
 	
 	/**
 	 * Puzzle two solution.
 	 */
 	public void puzzleTwo() {
+		/*
 		
+		
+		*/
+		
+		this.solutionTwo = "bar";
 	}
 }
