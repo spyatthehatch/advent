@@ -19,6 +19,7 @@ that you may discover answers to questions you don't want answered.
 
      -------Part 1------  -------Part 2------
 Day       Time  Rank  Score       Time  Rank  Score
+  9   01:58:08  1801      0   02:32:18  1330      0
   8   16:36:23  7437      0   17:21:33  7030      0
   7   00:43:23  1184      0       >24h  8773      0
   6   01:03:57  1071      0   01:16:34   727      0
