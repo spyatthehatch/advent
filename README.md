@@ -1,3 +1,4 @@
+<h1>Advent</h1>
 
 This is a repository used for generating solutions for the Advent of Code.
 As my first year participating in this challenge, I've been very excited every
@@ -16,8 +17,8 @@ challenges and attempt to find some elegant solutions.
 SPOILER ALERT: These are solutions that worked for my input sets.  Be advised
 that you may discover answers to questions you don't want answered.
 
-
-     -------Part 1------  -------Part 2------
+<pre>
+      -------Part 1--------   -------Part 2--------
 Day       Time  Rank  Score       Time  Rank  Score
   9   01:58:08  1801      0   02:32:18  1330      0
   8   16:36:23  7437      0   17:21:33  7030      0
@@ -28,5 +29,6 @@ Day       Time  Rank  Score       Time  Rank  Score
   3   01:29:12  3102      0   01:39:27  2782      0
   2   00:29:11  2141      0   00:40:30  1667      0
   1   00:05:14   777      0   00:54:03  1551      0
+</pre>
 
 -S@tH
