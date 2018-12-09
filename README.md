@@ -17,7 +17,7 @@ SPOILER ALERT: These are solutions that worked for my input sets.  Be advised
 that you may discover answers to questions you don't want answered.
 
 
-     -------Part 1------  -------Part 2------
+      -------Part 1--------   -------Part 2--------
 Day       Time  Rank  Score       Time  Rank  Score
   8   16:36:23  7437      0   17:21:33  7030      0
   7   00:43:23  1184      0       >24h  8773      0
