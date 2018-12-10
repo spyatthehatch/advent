@@ -98,6 +98,7 @@ public class Day03 extends AbstractDay {
 		...........
 		...........
 		...........
+		
 		The problem is that many of the claims overlap, causing two or more
 		claims to cover part of the same areas. For example, consider the
 		following claims:
@@ -105,6 +106,7 @@ public class Day03 extends AbstractDay {
 		#1 @ 1,3: 4x4
 		#2 @ 3,1: 4x4
 		#3 @ 5,5: 2x2
+		
 		Visually, these claim the following areas:
 		
 		........
@@ -115,6 +117,7 @@ public class Day03 extends AbstractDay {
 		.111133.
 		.111133.
 		........
+		
 		The four square inches marked with X are claimed by both 1 and 2. (Claim
 		3, while adjacent to the others, does not overlap either of them.)
 		
@@ -135,7 +138,6 @@ public class Day03 extends AbstractDay {
 		for(int x=0; x < MAX_WIDTH; x++) {
 			for(int y=0; y < MAX_HEIGHT; y++) {
 				for(final FabricClaim claim : this.claims) {
-					
 					boolean claimed = claim.isCoordinateClaimed(x, y);
 					
 					if(claimed) {
