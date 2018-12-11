@@ -44,6 +44,7 @@ public class Advent {
 		days.add(new Day08());
 		days.add(new Day09());
 		days.add(new Day10());
+		days.add(new Day11());
 		
 		for(final Day day : days) {
 			day.puzzleOne();

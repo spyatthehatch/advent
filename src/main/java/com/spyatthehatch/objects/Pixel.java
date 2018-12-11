@@ -62,7 +62,7 @@ public class Pixel {
 	 * 
 	 * @param multiplier Number of seconds to jump ahead.
 	 */
-	public void jump(int multiplier){
+	public void jump(final int multiplier){
 		this.xPosition += (this.xVelocity * multiplier);
 		this.yPosition += (this.yVelocity * multiplier);
 	}

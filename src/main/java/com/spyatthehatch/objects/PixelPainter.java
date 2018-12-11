@@ -39,11 +39,11 @@ public class PixelPainter extends JPanel {
 	/**
 	 * Paint the pixels.
 	 */
-	public void paintComponent(Graphics g){
+	public void paintComponent(final Graphics g){
 		super.paintComponent(g);
 		this.setBackground(Color.BLACK);
 		
-		Graphics2D g2d = (Graphics2D) g;
+		final Graphics2D g2d = (Graphics2D) g;
 		g2d.setColor(Color.red);
 		
 		final Dimension size = getSize();

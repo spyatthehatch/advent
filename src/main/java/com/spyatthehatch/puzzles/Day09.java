@@ -17,11 +17,6 @@ public class Day09 extends AbstractDay {
 	*/
 	
 	/**
-	 * Puzzle resource.
-	 */
-	public static final String RESOURCE = "puzzles/day9-list.txt";
-	
-	/**
 	 * Given number of players.
 	 */
 	public static final int PLAYERS = 477;
