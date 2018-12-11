@@ -127,8 +127,6 @@ public class Day11 extends AbstractDay {
 		with the largest total power?
 		*/
 		
-		int[][] grid3x3 = new int[X_MAX - 2][Y_MAX - 2];
-		
 		int index = 0;
 		for(int x=1; x<X_MAX; x++){
 			for(int y=1; y<Y_MAX; y++) {
@@ -137,36 +135,34 @@ public class Day11 extends AbstractDay {
 			}
 		}
 		
-		for(int x=1; x<X_MAX-2; x++) {
-			for(int y=1; y<Y_MAX-2; y++){
-				int sum = this.cells.get(this.grid[x][y]).getPowerLevel();
-				sum += this.cells.get(this.grid[x+1][y]).getPowerLevel();
-				sum += this.cells.get(this.grid[x+2][y]).getPowerLevel();
-				sum += this.cells.get(this.grid[x][y+1]).getPowerLevel();
-				sum += this.cells.get(this.grid[x+1][y+1]).getPowerLevel();
-				sum += this.cells.get(this.grid[x+2][y+1]).getPowerLevel();
-				sum += this.cells.get(this.grid[x][y+2]).getPowerLevel();
-				sum += this.cells.get(this.grid[x+1][y+2]).getPowerLevel();
-				sum += this.cells.get(this.grid[x+2][y+2]).getPowerLevel();
-				grid3x3[x][y] = sum;
-			}
-		}
-		
 		int xMax = 1;
 		int yMax = 1;
 		int maxValue = Integer.MIN_VALUE;
+		final int SIZE = 3;
+		
+		// For each x,y coordinate...
 		for(int x=1; x<X_MAX-2; x++) {
 			for(int y=1; y<Y_MAX-2; y++){
-				if(grid3x3[x][y] > maxValue) {
-					maxValue = grid3x3[x][y];
+				
+				// Calculate the 3x3 sum.
+				int sum = 0;	
+				for(int i=0; i<SIZE; i++){
+					for(int j=0; j<SIZE; j++){
+						sum += this.cells.get(this.grid[x+i][y+j]).getPowerLevel();
+					}
+				}
+				
+				// Check if this is a new max.
+				if(sum > maxValue) {
+					maxValue = sum;
 					xMax = x;
 					yMax = y;
 				}
 			}
 		}
-		
+				
 		LOGGER.debug("3x3 grid power level at (" + xMax + "," + yMax + "): " +
-			grid3x3[xMax][yMax]);
+			maxValue);
 		this.solutionOne = xMax + "," + yMax;
 	}
 	
