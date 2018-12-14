@@ -22,7 +22,7 @@ that you may discover answers to questions you don't want answered.
 Day       Time  Rank  Score       Time  Rank  Score
  14   00:38:32  1073      0   02:01:30  1400      0
  13   23:34:42  5451      0   23:55:46  4870      0
- 12   02:45:49  2261      0   <STILL IN PROGRESS..>
+ 12   02:45:49  2261      0   STILL IN PROGRESS....
  11   01:03:16  2055      0   01:51:00  1818      0
  10   02:50:07  2379      0   03:02:02  2455      0
   9   01:58:08  1801      0   02:32:18  1330      0
