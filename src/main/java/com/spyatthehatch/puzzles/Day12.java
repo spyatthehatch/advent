@@ -237,17 +237,14 @@ public class Day12 extends AbstractDay {
 		
 		List<Boolean> startState = new ArrayList<Boolean>();
 		long startingIndex = -10;
+		long[] sums = new long[10];
 		
 		for(int i=0; i<this.state.length; i++) {
 			startState.add(new Boolean(this.state[i]));
 		}
 		
 		// Loop through the iterations.
-		for(long i=0; i<50000000000L; i++){
-			if(i%1000000 == 0){
-				LOGGER.trace("Calculating iteration " + i/1000000 + "M, Size:" +
-					startState.size() + ", startIndex:" + startingIndex);
-			}
+		for(long i=0; i<=10000000L; i++){
 			final List<Boolean> nextState = new ArrayList<Boolean>();
 			
 			nextState.add(new Boolean(false));
@@ -301,20 +298,56 @@ public class Day12 extends AbstractDay {
 			}
 			
 			startState = nextState;
-		}
-		
-		// Add up the points.
-		long sum = 0;
-		long value = startingIndex;
-		for(int i=0; i<startState.size(); i++){
-			if(startState.get(i).booleanValue()) {
-				sum += value;
-			}
 			
-			value++;
+			if(i%1000000 == 0 && i != 0){
+				// Add up the points.
+				long sum = 0;
+				long value = startingIndex;
+				for(int j=0; j<startState.size(); j++){
+					if(startState.get(j).booleanValue()) {
+						sum += value;
+					}
+					
+					value++;
+				}
+				
+				sums[(int)i/1000000 - 1] = sum;
+				
+				/*
+				 * Originally, ran this with intention of summing the 50B
+				 * generations, but after 4 hours it had only completed 5B
+				 * iterations.  Clearly, brute force is the way to win this one.
+				 * 
+				 * Output every 1M iteration to identify trend.  The pots were
+				 * increasing in sum by exactly 23,000,000 every iteration.
+				 * 
+				 * 5M iteration sum: 115,000,381
+				 * 6M iteration sum: 138,000,381 (23M delta)
+				 * 7M iteration sum: 161,000,381 (23M delta)
+				 * 8M iteration sum: 184,000,381 (23M delta)
+				 * ...
+				 * 
+				 * Formula to determine final sum:
+				 * 49,995 iterations * 23M delta + (sum at 5M) - one iteration.
+				 * One iteration = 23M delta / 1M = 23.
+				 * 
+				 * (49,995 * 23,000,000) + 115,000,381 - 23 = 1,150,000,000,358.
+				 */
+				LOGGER.trace("Calculating iteration " + i + ", Size:" +
+					startState.size() + ", startIndex:" + startingIndex + ", sum:" +
+					sum);
+			}
 		}
 		
-		LOGGER.trace("Size: " + startState.size());
+		long delta = sums[1] - sums[0];
+		for(int i=2; i<sums.length-1; i++){
+			if(sums[i+1] - sums[i] != delta){
+				LOGGER.warn("Trend of " + delta + " delta has not continued.");
+			}
+		}
+		
+		final long sum = 49995 * delta + sums[4] - (delta/1000000);
+		
 		LOGGER.debug("Day 12, Puzzle 2: the sum is " + sum);
 		this.solutionTwo = String.valueOf(sum);
 	}
