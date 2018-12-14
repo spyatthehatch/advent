@@ -41,4 +41,5 @@ Day       Time  Rank  Score       Time  Rank  Score
 <h3>Other notes</h3>
 <a href="https://youtu.be/aiS_RjR5PS0">YouTube - Advent of Code 2018 Day 10</a>
 
+</br></br>
 -S@tH
