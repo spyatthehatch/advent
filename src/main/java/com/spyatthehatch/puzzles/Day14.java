@@ -1,9 +1,7 @@
 package com.spyatthehatch.puzzles;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.apache.commons.lang3.StringUtils;
+import com.spyatthehatch.objects.Scoreboard;
 
 /**
  * Day fourteen solutions.
@@ -26,6 +24,16 @@ public class Day14 extends AbstractDay {
 	*/
 	
 	public static final int PUZZLE_INPUT = 380621;
+	
+	/**
+	 * Given value for first recipe score.
+	 */
+	private static final int RECIPE_ONE = 3;
+	
+	/**
+	 * Given value for second recipe score.
+	 */
+	private static final int RECIPE_TWO = 7;
 	
 	/**
 	 * Constructor for Day 14 puzzles.
@@ -100,42 +108,19 @@ public class Day14 extends AbstractDay {
 		What are the scores of the ten recipes immediately after the number of
 		recipes in your puzzle input?
 		*/
+				
+		final Scoreboard scoreboard = new Scoreboard(RECIPE_ONE, RECIPE_TWO);
+		int size = Integer.MIN_VALUE;
 		
-		final List<Integer>scoreboard = new ArrayList<Integer>();
-		scoreboard.add(3);
-		scoreboard.add(7);
-		int elfOne = 0;
-		int elfTwo = 1;
-		
-		while(scoreboard.size() < PUZZLE_INPUT + 10){
-			final int elfOneScore = scoreboard.get(elfOne);
-			final int elfTwoScore = scoreboard.get(elfTwo);
-			int recipeScore = elfOneScore + elfTwoScore;
-			if(recipeScore < 10){
-				scoreboard.add(recipeScore);
-			} else {
-				scoreboard.add(1);
-				scoreboard.add(recipeScore % 10);
-			}
-			
-			elfOne += elfOneScore + 1;
-			elfTwo += elfTwoScore + 1;
-			
-			while(elfOne > scoreboard.size() - 1){
-				elfOne -= scoreboard.size();
-			}
-			
-			while(elfTwo > scoreboard.size() - 1){
-				elfTwo -= scoreboard.size();
-			}
+		while(size < PUZZLE_INPUT + 10){
+			size = scoreboard.combineRecipes();
 		}
 		
-		StringBuilder sb = new StringBuilder();
-		for(int i = PUZZLE_INPUT; i < PUZZLE_INPUT + 10; i++){
-			sb.append(scoreboard.get(i));
-		}
-		LOGGER.debug("Day 14, Puzzle 1: recipe scores are " + sb.toString());
-		this.solutionOne = sb.toString();
+		final String scores = scoreboard.getScores(PUZZLE_INPUT,
+			PUZZLE_INPUT + 10);
+		
+		LOGGER.debug("Day 14, Puzzle 1: recipe scores are " + scores);
+		this.solutionOne = scores;
 	}
 	
 	/**
@@ -157,50 +142,23 @@ public class Day14 extends AbstractDay {
 		sequence in your puzzle input?
 		*/
 		
-		final List<Integer>scoreboard = new ArrayList<Integer>();
-		scoreboard.add(3);
-		scoreboard.add(7);
-		int elfOne = 0;
-		int elfTwo = 1;
+		final Scoreboard scoreboard = new Scoreboard(RECIPE_ONE, RECIPE_TWO);
+		
 		boolean found = false;
+		int size = Integer.MIN_VALUE;
 		final String target = String.valueOf(PUZZLE_INPUT);
 		
 		while(!found){
-			final int elfOneScore = scoreboard.get(elfOne);
-			final int elfTwoScore = scoreboard.get(elfTwo);
-			int recipeScore = elfOneScore + elfTwoScore;
-			if(recipeScore < 10){
-				scoreboard.add(recipeScore);
-			} else {
-				scoreboard.add(1);
-				scoreboard.add(recipeScore % 10);
-			}
+			size = scoreboard.combineRecipes();
+			final String scores = scoreboard.getScores(size-10, size);
 			
-			elfOne += elfOneScore + 1;
-			elfTwo += elfTwoScore + 1;
-			
-			while(elfOne > scoreboard.size() - 1){
-				elfOne -= scoreboard.size();
-			}
-			
-			while(elfTwo > scoreboard.size() - 1){
-				elfTwo -= scoreboard.size();
-			}
-			
-			final StringBuilder sb = new StringBuilder();
-			for(int i=scoreboard.size()-10; i>=0 && i<scoreboard.size(); i++){
-				sb.append(scoreboard.get(i));
-			}
-			
-			final String recipeScores = sb.toString();
-			if(StringUtils.contains(recipeScores, target)){
+			if(StringUtils.contains(scores, target)){
 				found = true;
-				LOGGER.trace(recipeScores);
 			}
 		}
 		
-		LOGGER.debug("Day 14, Puzzle 2: recipe size is " + (scoreboard.size()
-			-target.length() - 1));
-		this.solutionTwo = String.valueOf(scoreboard.size()-target.length() -1);
+		LOGGER.debug("Day 14, Puzzle 2: recipe size is " + (size -
+			target.length() - 1));
+		this.solutionTwo = String.valueOf(size-target.length() -1);
 	}
 }
