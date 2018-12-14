@@ -316,7 +316,8 @@ public class Day12 extends AbstractDay {
 				/*
 				 * Originally, ran this with intention of summing the 50B
 				 * generations, but after 4 hours it had only completed 5B
-				 * iterations.  Clearly, brute force is the way to win this one.
+				 * iterations.  Clearly, brute force is not the way to win this
+				 * one.
 				 * 
 				 * Output every 1M iteration to identify trend.  The pots were
 				 * increasing in sum by exactly 23,000,000 every iteration.
