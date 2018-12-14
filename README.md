@@ -14,9 +14,11 @@ within loops within loops, I'm certain my algorithms are approaching O(N^3+).
 Perhaps when this year is over, I'll go through the previous years' advent
 challenges and attempt to find some elegant solutions.
 
-SPOILER ALERT: These are solutions that worked for my input sets.  Be advised
-that you may discover answers to questions you don't want answered.
+<h3>Spoiler Alert</h3>
+These are solutions that worked for my input sets.  Be advised that you may
+discover answers to questions you don't want answered.
 
+<h3>Personal Stats</h3>
 <pre>
       -------Part 1--------   -------Part 2--------
 Day       Time  Rank  Score       Time  Rank  Score
@@ -36,7 +38,7 @@ Day       Time  Rank  Score       Time  Rank  Score
   1   00:05:14   777      0   00:54:03  1551      0
 </pre>
 
-Other notes:
+<h3>Other notes</h3>
 <a href="https://youtu.be/aiS_RjR5PS0">YouTube - Advent of Code 2018 Day 10</a>
 
 -S@tH
