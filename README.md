@@ -36,4 +36,7 @@ Day       Time  Rank  Score       Time  Rank  Score
   1   00:05:14   777      0   00:54:03  1551      0
 </pre>
 
+Other notes:
+<a href="https://youtu.be/aiS_RjR5PS0">YouTube - Advent of Code 2018 Day 10</a>
+
 -S@tH
