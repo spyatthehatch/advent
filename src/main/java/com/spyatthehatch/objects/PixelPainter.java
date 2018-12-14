@@ -7,9 +7,6 @@ import java.awt.Graphics2D;
 import java.util.List;
 import javax.swing.JPanel;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 /**
  * PixelPainter object.
  * 

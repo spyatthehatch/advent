@@ -68,6 +68,7 @@ public class Day04 extends AbstractDay {
 	/**
 	 * Puzzle one solution.
 	 */
+	@SuppressWarnings("deprecation")
 	public void puzzleOne() {
 		/*
 		As you search the closet for anything that might help, you discover that

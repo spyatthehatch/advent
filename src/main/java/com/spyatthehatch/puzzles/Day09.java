@@ -17,12 +17,12 @@ public class Day09 extends AbstractDay {
 	*/
 	
 	/**
-	 * Given number of players.
+	 * Puzzle input: given number of players.
 	 */
 	public static final int PLAYERS = 477;
 	
 	/**
-	 * Given number of last marble points.
+	 * Puzzle input: given number of last marble points.
 	 */
 	public static final int LAST_MARBLE_POINTS = 70851;
 	

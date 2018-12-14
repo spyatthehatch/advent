@@ -128,14 +128,12 @@ public class Day05 extends AbstractDay {
 		}
 		
 		int smallest = this.input.length();
-		int index = 0;
 		
 		for(int i=0; i<Constants.LETTERS.length; i++) {
 			LOGGER.trace("Letter " + Constants.LETTERS[i] + " size: " + size[i]);
 			
 			if(size[i] < smallest) {
 				smallest = size[i];
-				index = i;
 			}
 		}
 		
