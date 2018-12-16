@@ -3,6 +3,8 @@ package com.spyatthehatch.objects;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
+import com.spyatthehatch.util.CoordinateUtils;
+
 /**
  * Coordinate object.
  * 
@@ -69,12 +71,12 @@ public class Coordinate {
 	 * Calculate the Manhattan distance between this Coordinate and the
 	 * provided x,y position.
 	 * 
-	 * @param x X component.
-	 * @param y Y component.
+	 * @param xPos X component.
+	 * @param yPos Y component.
 	 * @return Manhanttan distance.
 	 */
-	public int getManhattanDistance(int x, int y) {
-		return Math.abs(x - this.x) + Math.abs(y -this.y);
+	public int getManhattanDistance(int xPos, int yPos) {
+		return CoordinateUtils.getManhattanDistance(this.x, this.y, xPos, yPos);
 	}
 
 	@Override

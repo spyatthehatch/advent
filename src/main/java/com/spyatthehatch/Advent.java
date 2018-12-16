@@ -48,6 +48,8 @@ public class Advent {
 		days.add(new Day12());
 		days.add(new Day13());
 		days.add(new Day14());
+		days.add(new Day15());
+		days.add(new Day16());
 		
 		for(final Day day : days) {
 			day.puzzleOne();
