@@ -3,9 +3,9 @@ package com.spyatthehatch.puzzles;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.spyatthehatch.objects.Instruction;
-import com.spyatthehatch.objects.Registers;
-import com.spyatthehatch.objects.Sample;
+import com.spyatthehatch.objects.assembly.Instruction;
+import com.spyatthehatch.objects.assembly.Registers;
+import com.spyatthehatch.objects.assembly.Sample;
 import com.spyatthehatch.util.ResourceReader;
 
 /**

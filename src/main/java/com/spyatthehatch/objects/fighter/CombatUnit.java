@@ -1,30 +1,91 @@
 package com.spyatthehatch.objects.fighter;
 
-import com.spyatthehatch.util.CoordinateUtils;
-
+/**
+ * Abstract class of Combat Unit objects.
+ * 
+ * @author Bill Everton
+ * @version Advent 2018
+ */
 public abstract class CombatUnit implements Fighter {
-	protected int x;
+	/**
+	 * Default attack value for all combat units.
+	 */
+	protected static final int DEFAULT_ATTACK = 3;
 	
-	protected int y;
+	/**
+	 * This combat unit's current location.
+	 */
+	protected Square location;
 	
+	/**
+	 * Health points.
+	 */
 	protected int health;
 	
-	protected static final int ATTACK = 3;
+	/**
+	 * Id number.
+	 */
+	protected int id;
 	
+	/**
+	 * Number of combat units created, used for generating Ids.
+	 */
+	private static int count = 0;
+	
+	/**
+	 * Attack per hit.
+	 */
+	protected int attack;
+	
+	/**
+	 * Constructor.
+	 * 
+	 * @param x X coordinate.
+	 * @param y Y coordinate.
+	 */
 	protected CombatUnit(final int x, final int y){
-		this.x = x;
-		this.y = y;
+		this.id = count++;
+		this.location = new Square(x, y);
 		this.health = 200;
+		this.attack = DEFAULT_ATTACK;
+	}
+	
+	/**
+	 * Get Id of this CombatUnit object.
+	 */
+	public int getId(){
+		return this.id;
+	}
+	
+	/**
+	 * Get current location square.
+	 */
+	public Square getSquare(){
+		return this.location;
+	}
+	
+	/**
+	 * Set new location square.
+	 */
+	public void setSquare(final Square square){
+		this.location = square;
+	}
+	
+	/**
+	 * Get the health of this CombatUnit.
+	 */
+	public int getHealth(){
+		return this.health;
 	}
 	
 	public int compareTo(final Fighter f){
-		return CoordinateUtils.readingOrder(this.x, this.y, f.getX(), f.getY());
+		return this.location.compareTo(f.getSquare());
 	}
 	
 	public boolean attack (final Fighter f){
 		if(f instanceof CombatUnit){
 			CombatUnit c = (CombatUnit)f;
-			c.health -= ATTACK;
+			c.health -= this.attack;
 			
 			if(c.health <= 0){
 				return true;
@@ -32,17 +93,5 @@ public abstract class CombatUnit implements Fighter {
 		}
 		
 		return false;
-	}
-	
-	public int getX(){
-		return this.x;
-	}
-	
-	public int getY(){
-		return this.y;
-	}
-	
-	public int getHealth(){
-		return this.health;
 	}
 }

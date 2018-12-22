@@ -1,4 +1,4 @@
-package com.spyatthehatch.objects;
+package com.spyatthehatch.objects.assembly;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -12,9 +12,24 @@ import org.apache.commons.lang3.builder.EqualsBuilder;
  */
 public class Registers {
 	/**
+	 * The number of registers.
+	 */
+	public static int REGISTERS_COUNT = 6;
+	
+	/**
 	 * Map of registers.
 	 */
-	private Map<Integer, Integer> registers = new HashMap<Integer, Integer>();
+	private Map<Integer, Integer> registers;
+
+	/**
+	 * Default constructor.  Initialize the registers to all zeros.
+	 */
+	public Registers(){
+		this.registers = new HashMap<Integer, Integer>();
+		for(int i=0; i<REGISTERS_COUNT; i++){
+			this.registers.put(i, 0);
+		}
+	}
 	
 	/**
 	 * Deep copy of another Registers object.
@@ -22,17 +37,24 @@ public class Registers {
 	 * @param other Registers object to copy.
 	 */
 	public Registers(final Registers other){
-		for(int i=0; i<4; i++){
-			this.registers.put(i, other.registers.get(i));
+		this();
+		for(int i=0; i<REGISTERS_COUNT; i++){
+			Integer value = other.registers.get(i);
+			if(value != null){
+				this.registers.put(i, value);
+			} else {
+				this.registers.put(i, 0);
+			}
 		}
 	}
-	
+
 	/**
 	 * Constructor.
 	 * 
 	 * @param s String from input.
 	 */
 	public Registers(final String s){
+		this();
 		final String commaDelim = s.replace("[", "").replace("]", "")
 			.replace(" ", "");
 		final String[] splits = commaDelim.split(",");
@@ -81,5 +103,14 @@ public class Registers {
 				.append(this.registers, r.registers)
 				.isEquals();
 		}
+	}
+	
+	public String toString(){
+		final StringBuilder sb = new StringBuilder();
+		
+		for(int i=0; i<REGISTERS_COUNT; i++){
+			sb.append(this.registers.get(i) + " ");
+		}
+		return sb.toString();
 	}
 }

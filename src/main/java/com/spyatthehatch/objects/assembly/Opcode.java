@@ -1,4 +1,4 @@
-package com.spyatthehatch.objects;
+package com.spyatthehatch.objects.assembly;
 
 import java.util.HashMap;
 import java.util.Map;

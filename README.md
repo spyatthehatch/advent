@@ -22,8 +22,9 @@ discover answers to questions you don't want answered.
 <pre>
       -------Part 1--------   -------Part 2--------
 Day       Time  Rank  Score       Time  Rank  Score
+ 22   01:22:47   737      0          -     -      -
  16   02:57:49  1157      0   04:57:09  1299      0
- 15   <STILL IN PROGRESS..>   <STILL IN PROGRESS..>
+ 15       >24h  4100      0          -     -      -
  14   00:38:32  1073      0   02:01:30  1400      0
  13   23:34:42  5451      0   23:55:46  4870      0
  12   02:45:49  2261      0       >24h  7450      0

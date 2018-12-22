@@ -1,4 +1,4 @@
-package com.spyatthehatch.objects;
+package com.spyatthehatch.objects.assembly;
 
 /**
  * Instruction POJO and logic.
@@ -41,6 +41,65 @@ public class Instruction {
 		this.outputC = Integer.valueOf(split[3]);
 	}
 
+	public Instruction(final String[] array){
+		switch(array[0]){
+			case "addi":
+				this.opcode = Opcode.valueOf(0);
+				break;
+			case "bani":
+				this.opcode = Opcode.valueOf(1);
+				break;
+			case "gtir":
+				this.opcode = Opcode.valueOf(2);
+				break;
+			case "borr":
+				this.opcode = Opcode.valueOf(3);
+				break;
+			case "eqrr":
+				this.opcode = Opcode.valueOf(4);
+				break;
+			case "bori":
+				this.opcode = Opcode.valueOf(5);
+				break;
+			case "gtrr":
+				this.opcode = Opcode.valueOf(6);
+				break;
+			case "setr":
+				this.opcode = Opcode.valueOf(7);
+				break;
+			case "muli":
+				this.opcode = Opcode.valueOf(8);
+				break;
+			case "seti":
+				this.opcode = Opcode.valueOf(9);
+				break;
+			case "banr":
+				this.opcode = Opcode.valueOf(10);
+				break;
+			case "gtri":
+				this.opcode = Opcode.valueOf(11);
+				break;
+			case "eqir":
+				this.opcode = Opcode.valueOf(12);
+				break;
+			case "eqri":
+				this.opcode = Opcode.valueOf(13);
+				break;
+			case "addr":
+				this.opcode = Opcode.valueOf(14);
+				break;
+			case "mulr":
+				this.opcode = Opcode.valueOf(15);
+				break;
+			default:
+				break;
+		}
+		
+		this.inputA = Integer.valueOf(array[1]);
+		this.inputB = Integer.valueOf(array[2]);
+		this.outputC = Integer.valueOf(array[3]); 
+	}
+	
 	/**
 	 * @return the opcode
 	 */
@@ -436,5 +495,10 @@ public class Instruction {
 			}
 		
 		return after;
+	}
+	
+	public String toString(){
+		return "Op:" + this.opcode + " A:" + this.inputA + " B:" + this.inputB +
+			" C:" + this.outputC;
 	}
 }
