@@ -52,7 +52,9 @@ public class Advent {
 //		days.add(new Day16());
 //		days.add(new Day19());
 //		days.add(new Day21());
-		days.add(new Day22());
+//		days.add(new Day22());
+//		days.add(new Day23());
+		days.add(new Day25());
 		
 		for(final Day day : days) {
 			day.puzzleOne();

@@ -1,7 +1,12 @@
 package com.spyatthehatch.puzzles;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
+import com.spyatthehatch.objects.Constellation;
+import com.spyatthehatch.objects.FourDPoint;
 import com.spyatthehatch.util.ResourceReader;
 
 /**
@@ -21,6 +26,8 @@ public class Day25 extends AbstractDay {
 	 */
 	public static final String RESOURCE = "puzzles/day25-list.txt";
 	
+	public List<FourDPoint> points = new ArrayList<FourDPoint>();
+	
 	/**
 	 * Constructor for Day 25 puzzles.
 	 */
@@ -28,6 +35,10 @@ public class Day25 extends AbstractDay {
 		this.dayNum = "25";
 		final ResourceReader reader = new ResourceReader(RESOURCE);
 		final List<String> input = reader.toList();
+		
+		for(final String s : input){
+			this.points.add(new FourDPoint(s));
+		}
 	}
 	
 	/**
@@ -38,6 +49,16 @@ public class Day25 extends AbstractDay {
 		
 		
 		*/
+		final Map<FourDPoint, Constellation> constellations = new HashMap<FourDPoint, Constellation>();
+		
+		for(final FourDPoint point : this.points){
+			constellations.put(point, new Constellation(point));
+		}
+		
+		for(final FourDPoint point : this.points){
+			
+		}
+		
 		
 		this.solutionOne = "foo";
 	}
@@ -49,7 +70,8 @@ public class Day25 extends AbstractDay {
 		/*
 		
 		
-		*/
+		*/	
+
 		
 		this.solutionTwo = "bar";
 	}
