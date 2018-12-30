@@ -127,7 +127,7 @@ public class Square implements Comparable<Square>{
 	
 	@Override
 	public int hashCode(){
-		return Objects.hash(x, y);
+		return Objects.hash(this.x, this.y);
 	}
 	
 	@Override

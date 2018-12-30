@@ -22,6 +22,8 @@ discover answers to questions you don't want answered.
 <pre>
       -------Part 1--------   -------Part 2--------
 Day       Time  Rank  Score       Time  Rank  Score
+ 25       >24h  2944      0          -     -      -
+ 23       >24h  3257      0          -     -      -
  22   01:22:47   737      0          -     -      -
  16   02:57:49  1157      0   04:57:09  1299      0
  15       >24h  4100      0          -     -      -

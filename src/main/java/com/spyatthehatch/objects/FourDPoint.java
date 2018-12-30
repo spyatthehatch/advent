@@ -1,16 +1,42 @@
 package com.spyatthehatch.objects;
 
+import java.util.Objects;
+import org.apache.commons.lang3.builder.EqualsBuilder;
 import com.spyatthehatch.util.CoordinateUtils;
 
+/**
+ * Four dimemsional point.
+ * 
+ * @author Bill Everton
+ * @version Advent 2018
+ *
+ */
 public class FourDPoint {
+	/**
+	 * X coordinate.
+	 */
 	private int x;
 	
+	/**
+	 * Y coordinate.
+	 */
 	private int y;
 	
+	/**
+	 * Z coordinate.
+	 */
 	private int z;
 	
+	/**
+	 * 4th coordinate.
+	 */
 	private int t;
 	
+	/**
+	 * Constructor.
+	 * 
+	 * @param s String from puzzle input.
+	 */
 	public FourDPoint(final String s) {
 		final String[] split = s.split(",");
 		this.x = Integer.valueOf(split[0]);
@@ -19,8 +45,43 @@ public class FourDPoint {
 		this.t = Integer.valueOf(split[3]);
 	}
 	
+	/**
+	 * Get the Manhattan distance to another FourDPoint.
+	 * 
+	 * @param other FourDPoint to get distance to.
+	 * @return Manhattan distance.
+	 */
 	public int distanceTo(final FourDPoint other){
 		return CoordinateUtils.getManhattanDistance(this.x, this.y, this.z,
 			this.t, other.x, other.y, other.z, other.t);
+	}
+	
+	@Override
+	public int hashCode(){
+		return Objects.hash(this.x, this.y, this.z, this.t);
+	}
+	
+	@Override
+	public boolean equals(final Object o){
+		if(o == null){
+			return false;
+		}
+		
+		if(o == this){
+			return true;
+		}
+		
+		if(this.getClass() != o.getClass()){
+			return false;
+		} else {
+			final FourDPoint point = (FourDPoint)o;
+			
+			return new EqualsBuilder()
+				.append(this.x, point.x)
+				.append(this.y, point.y)
+				.append(this.z, point.z)
+				.append(this.t, point.t)
+				.isEquals();
+		}
 	}
 }
