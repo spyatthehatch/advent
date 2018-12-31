@@ -1,7 +1,6 @@
 package com.spyatthehatch.puzzles;
 
 import java.util.List;
-
 import com.spyatthehatch.util.ResourceReader;
 
 /**
@@ -20,7 +19,7 @@ public class Day20 extends AbstractDay {
 	 * Puzzle resource.
 	 */
 	public static final String RESOURCE = "puzzles/day20-list.txt";
-	
+
 	/**
 	 * Constructor for Day 20 puzzles.
 	 */
@@ -29,6 +28,7 @@ public class Day20 extends AbstractDay {
 		final ResourceReader reader = new ResourceReader(RESOURCE);
 		final List<String> input = reader.toList();
 	}
+	
 	
 	/**
 	 * Puzzle one solution.
