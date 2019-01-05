@@ -11,17 +11,7 @@ import com.spyatthehatch.util.CoordinateUtils;
  * @author Bill Everton
  * @version Advent 2018
  */
-public class Coordinate {
-	/**
-	 * X coordinate.
-	 */
-	private int x;
-	
-	/**
-	 * Y coordinate.
-	 */
-	private int y;
-	
+public class Coordinate extends Point{
 	/**
 	 * Number of points this Coordinate has within its area.
 	 */
@@ -33,24 +23,10 @@ public class Coordinate {
 	 * @param s String to parse to create Coordinate object from.
 	 * @param i Assigned Id.
 	 */
-	public Coordinate(final String s, int id) {
-		this.x = Integer.valueOf(StringUtils.substringBefore(s,"," ));
-		this.y = Integer.valueOf(StringUtils.substringAfter(s, " "));
+	public Coordinate(final String s) {
+		super(Integer.valueOf(StringUtils.substringBefore(s,"," )),
+			Integer.valueOf(StringUtils.substringAfter(s, " ")));
 		this.pointCount = 0;
-	}
-	
-	/**
-	 * @return the x.
-	 */
-	public int getX() {
-		return this.x;
-	}
-
-	/**
-	 * @return the y.
-	 */
-	public int getY() {
-		return this.y;
 	}
 
 	/**
@@ -76,7 +52,8 @@ public class Coordinate {
 	 * @return Manhanttan distance.
 	 */
 	public int getManhattanDistance(int xPos, int yPos) {
-		return CoordinateUtils.getManhattanDistance(this.x, this.y, xPos, yPos);
+		return CoordinateUtils.getManhattanDistance(this.getX(), this.getY(),
+			xPos, yPos);
 	}
 
 	@Override

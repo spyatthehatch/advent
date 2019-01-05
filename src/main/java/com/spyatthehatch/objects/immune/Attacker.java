@@ -174,8 +174,8 @@ public abstract class Attacker implements Group {
 	
 	@Override
 	public int compareTo(final Group other){
-		int power = this.units * this.attack;
-		int otherPower = other.getUnits() * other.getAttack();
+		final int power = this.units * this.attack;
+		final int otherPower = other.getUnits() * other.getAttack();
 		
 		if(otherPower - power == 0){
 			return other.getInitiative() - this.initiative;

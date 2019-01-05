@@ -6,17 +6,7 @@ package com.spyatthehatch.objects;
  * @author Bill Everton
  * @version Advent 2018
  */
-public class Cart {
-	/**
-	 * Current x position;
-	 */
-	private int x;
-	
-	/**
-	 * Current y position;
-	 */
-	private int y;
-	
+public class Cart extends Point{	
 	/**
 	 * Current heading.
 	 */
@@ -51,8 +41,7 @@ public class Cart {
 	 * @param dir Current heading.
 	 */
 	public Cart (final int x, final int y, final char dir){
-		this.x = x;
-		this.y = y;
+		super(x, y);
 		this.nextTurn = NextTurn.LEFT;
 		this.hasCrashed = false;
 		
@@ -75,8 +64,7 @@ public class Cart {
 	 * @param heading Current heading.
 	 */
 	public Cart (final int x, final int y, final Direction heading){
-		this.x = x;
-		this.y = y;
+		super(x, y);
 		this.nextTurn = NextTurn.LEFT;
 		this.hasCrashed = false;
 		this.currentHeading = heading;
@@ -88,16 +76,16 @@ public class Cart {
 	public void updatePosition(){
 		switch (this.currentHeading) {
 			case LEFT:
-				this.x--;
+				this.decrementX();
 				break;
 			case RIGHT:
-				this.x++;
+				this.incrementX();
 				break;
 			case DOWN:
-				this.y++;
+				this.incrementY();
 				break;
 			case UP:
-				this.y--;
+				this.decrementY();
 				break;				
 		}
 	}
@@ -182,20 +170,6 @@ public class Cart {
 	}
 	
 	/**
-	 * @return the x
-	 */
-	public int getX() {
-		return this.x;
-	}
-
-	/**
-	 * @return the y
-	 */
-	public int getY() {
-		return this.y;
-	}
-
-	/**
 	 * @return the currentHeading
 	 */
 	public Direction getCurrentHeading() {
@@ -227,7 +201,7 @@ public class Cart {
 	
 	@Override
 	public String toString() {
-		return "x:" + this.x +" y:" + this.y + " heading:" +
+		return "x:" + this.getX() +" y:" + this.getY() + " heading:" +
 			this.currentHeading + " next:" + this.nextTurn;
 	}
 }

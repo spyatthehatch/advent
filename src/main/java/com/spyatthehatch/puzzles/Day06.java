@@ -67,7 +67,7 @@ public class Day06 extends AbstractDay {
 		
 		int i = 0;
 		for(final String s : input) {
-			Coordinate c = new Coordinate(s, i);
+			Coordinate c = new Coordinate(s);
 			this.coords.add(c);
 			this.coordMap.put(i, c);
 			i++;

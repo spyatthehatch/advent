@@ -8,17 +8,7 @@ import org.apache.commons.lang3.StringUtils;
  * @author Bill Everton
  * @version Advent 2018
  */
-public class Pixel {
-	/**
-	 * X Position.
-	 */
-	private int xPosition;
-	
-	/**
-	 * Y Position.
-	 */
-	private int yPosition;
-	
+public class Pixel extends Point {	
 	/**
 	 * X Velocity.
 	 */
@@ -36,13 +26,12 @@ public class Pixel {
 	 * position=< 51781,  41361> velocity=<-5, -4>
 	 */
 	public Pixel(final String s){
+		super(Integer.valueOf(StringUtils.substringBefore(StringUtils
+			.substringAfter(s.split("> velocity=<")[0], "<"),",").trim()),
+			Integer.valueOf(StringUtils.substringAfter(StringUtils
+			.substringAfter(s.split("> velocity=<")[0], "<"),",").trim()));
 		final String[] split = s.split("> velocity=<");
-		final String rawCoord = StringUtils.substringAfter(split[0], "<");
-		this.xPosition = Integer.valueOf(StringUtils.substringBefore(rawCoord,
-			",").trim());
-		this.yPosition = Integer.valueOf(StringUtils.substringAfter(rawCoord,
-				",").trim());
-		String rawVelocity = StringUtils.substringBefore(split[1], ">");
+		final String rawVelocity = StringUtils.substringBefore(split[1], ">");
 		this.xVelocity = Integer.valueOf(StringUtils
 			.substringBefore(rawVelocity, ",").trim());
 		this.yVelocity = Integer.valueOf(StringUtils.substringAfter(rawVelocity,
@@ -53,8 +42,8 @@ public class Pixel {
 	 * Update position based on velocities for one second.
 	 */
 	public void nextPosition(){
-		this.xPosition += this.xVelocity;
-		this.yPosition += this.yVelocity;
+		this.incrementX(this.xVelocity);
+		this.incrementY(this.yVelocity);
 	}
 
 	/**
@@ -63,27 +52,27 @@ public class Pixel {
 	 * @param multiplier Number of seconds to jump ahead.
 	 */
 	public void jump(final int multiplier){
-		this.xPosition += (this.xVelocity * multiplier);
-		this.yPosition += (this.yVelocity * multiplier);
+		this.incrementX(this.xVelocity * multiplier);
+		this.incrementY((this.yVelocity * multiplier));
 	}
 	
 	/**
 	 * @return the xPosition
 	 */
 	public int getXPosition() {
-		return this.xPosition;
+		return this.getX();
 	}
 
 	/**
 	 * @return the yPosition
 	 */
 	public int getYPosition() {
-		return this.yPosition;
+		return this.getY();
 	}
 	
 	@Override
 	public String toString() {
-		return "Position:" + this.xPosition + "," + this.yPosition +
+		return "Position:" + this.getX() + "," + this.getX() +
 			" Velocity:" + this.xVelocity + "," + this.yVelocity;
 	}
 }

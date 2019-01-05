@@ -3,7 +3,6 @@ package com.spyatthehatch.puzzles;
 import java.util.List;
 
 import com.spyatthehatch.objects.Region;
-import com.spyatthehatch.util.ResourceReader;
 
 /**
  * Day twenty two solutions.

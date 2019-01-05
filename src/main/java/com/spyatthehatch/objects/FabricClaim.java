@@ -9,22 +9,12 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
  * @author Bill Everton
  * @version Advent 2018
  */
-public class FabricClaim {	
+public class FabricClaim extends Point {	
 	/**
-	 * ID.
+	 * Id.
 	 */
 	private int id;
-	
-	/**
-	 * X position.
-	 */
-	private int xPos;
-	
-	/**
-	 * Y position.
-	 */
-	private int yPos;
-	
+		
 	/**
 	 * Width.
 	 */
@@ -41,10 +31,11 @@ public class FabricClaim {
 	 * @param s Input string.
 	 */
 	public FabricClaim(final String s) {
+		super(Integer.valueOf(StringUtils.substringBefore(s.split(" ")[2],"," )),
+			Integer.valueOf(StringUtils
+				.remove(StringUtils.substringAfter(s.split(" ")[2], ","), ":")));
 		String[] split = s.split(" ");
 		this.id = Integer.valueOf(StringUtils.remove(split[0], "#"));
-		this.xPos = Integer.valueOf(StringUtils.substringBefore(split[2],"," ));
-		this.yPos = Integer.valueOf(StringUtils.remove(StringUtils.substringAfter(split[2], ","), ":"));
 		this.width = Integer.valueOf(StringUtils.substringBefore(split[3], "x"));
 		this.height = Integer.valueOf(StringUtils.substringAfter(split[3], "x"));
 	}
@@ -60,14 +51,14 @@ public class FabricClaim {
 	 * @return the xPos.
 	 */
 	public int getxPos() {
-		return this.xPos;
+		return this.getX();
 	}
 
 	/**
 	 * @return the yPos.
 	 */
 	public int getyPos() {
-		return this.yPos;
+		return this.getY();
 	}
 
 	/**
@@ -93,8 +84,8 @@ public class FabricClaim {
 	 * otherwise.
 	 */
 	public boolean isCoordinateClaimed(int x, int y) {
-		if(x > this.xPos && x <= (this.xPos + this.width) &&
-			y > this.yPos && y <= (this.yPos + this.height)) {
+		if(x > this.getX() && x <= (this.getX() + this.width) &&
+			y > this.getY() && y <= (this.getY() + this.height)) {
 			return true;
 		} else {
 			return false;

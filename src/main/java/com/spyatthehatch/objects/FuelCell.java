@@ -6,16 +6,16 @@ package com.spyatthehatch.objects;
  * @author Bill Everton
  * @version Advent 2018
  */
-public class FuelCell {
-	/**
-	 * X coordinate.
-	 */
-	private int x;
-	
-	/**
-	 * Y coordinate.
-	 */
-	private int y;
+public class FuelCell extends Point{
+//	/**
+//	 * X coordinate.
+//	 */
+//	private int x;
+//	
+//	/**
+//	 * Y coordinate.
+//	 */
+//	private int y;
 	
 	/**
 	 * Id for this fuel cell.
@@ -40,12 +40,13 @@ public class FuelCell {
 	 * @param serialNumber Serial number (puzzle input).
 	 */
 	public FuelCell(final int x, final int y, final int serialNumber){
-		this.x = x;
-		this.y = y;
+		super(x, y);
+//		this.x = x;
+//		this.y = y;
 		this.serialNumber = serialNumber;
-		this.id = this.x + 10;
+		this.id = this.getX() + 10;
 		
-		final int intermed = ((this.id * this.y) + this.serialNumber) * this.id;
+		final int intermed = ((this.id * this.getY()) + this.serialNumber) * this.id;
 		final String asString = String.valueOf(intermed);
 		
 		int hundredsValue = 0;

@@ -6,7 +6,7 @@ package com.spyatthehatch.objects;
  * @author Bill Everton
  * @version Advent 2018
  */
-public class Region {
+public class Region extends Point {
 	/**
 	 * Enum of different region types;
 	 */
@@ -26,16 +26,6 @@ public class Region {
 	 * Erosion modulo.
 	 */
 	public static final int EROSION_MODULO = 20183;
-	
-	/**
-	 * X coordinate.
-	 */
-	private int x;
-	
-	/**
-	 * Y coordinate.
-	 */
-	private int y;
 	
 	/**
 	 * Type of this region.
@@ -63,8 +53,7 @@ public class Region {
 	public Region(final int x, final int y, final int depth, final int
 		geologicIndex){
 		
-		this.x = x;
-		this.y = y;
+		super(x, y);
 		this.geologicIndex = geologicIndex;
 		this.erosionLevel = (this.geologicIndex + depth) % EROSION_MODULO;
 		
@@ -99,20 +88,6 @@ public class Region {
 		}
 	}
 	
-	/**
-	 * @return the x
-	 */
-	public int getX() {
-		return this.x;
-	}
-
-	/**
-	 * @return the y
-	 */
-	public int getY() {
-		return this.y;
-	}
-
 	/**
 	 * @return the type
 	 */

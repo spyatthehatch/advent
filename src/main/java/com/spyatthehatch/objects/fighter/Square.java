@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 import org.apache.commons.lang3.builder.EqualsBuilder;
+
+import com.spyatthehatch.objects.Point;
 import com.spyatthehatch.util.CoordinateUtils;
 
 /**
@@ -12,22 +14,12 @@ import com.spyatthehatch.util.CoordinateUtils;
  * @author Bill Everton
  * @version Advent 2018
  */
-public class Square implements Comparable<Square>{
+public class Square extends Point implements Comparable<Square> {
 	/**
 	 * Char denoting an open space on the map.  All other chars denote space
 	 * that is taken or unavailable.
 	 */
 	public static final char OPEN = '.';
-	
-	/**
-	 * X coordinate.
-	 */
-	private int x;
-	
-	/**
-	 * Y Coordinate.
-	 */
-	private int y;
 	
 	/**
 	 * Constructor.
@@ -36,22 +28,7 @@ public class Square implements Comparable<Square>{
 	 * @param y Y coordinate.
 	 */
 	public Square (final int x, final int y){
-		this.x = x;
-		this.y = y;
-	}
-
-	/**
-	 * @return the x coordinate.
-	 */
-	public int getX() {
-		return this.x;
-	}
-
-	/**
-	 * @return the y coordinate.
-	 */
-	public int getY() {
-		return this.y;
+		super(x, y);
 	}
 	
 	/**
@@ -66,20 +43,20 @@ public class Square implements Comparable<Square>{
 		final int height = map.length;
 		final List<Square> neighbors = new ArrayList<Square>();
 		
-		if(this.y-1 >= 0 && map[this.x][this.y-1] == OPEN){
-			neighbors.add(new Square(this.x,this.y-1));
+		if(this.getY()-1 >= 0 && map[this.getX()][this.getY()-1] == OPEN){
+			neighbors.add(new Square(this.getX(),this.getY()-1));
 		}
 		
-		if(this.x-1 >= 0 && map[(this.x-1)][this.y] == OPEN){
-			neighbors.add(new Square(this.x-1,this.y));
+		if(this.getX()-1 >= 0 && map[(this.getX()-1)][this.getY()] == OPEN){
+			neighbors.add(new Square(this.getX()-1,this.getY()));
 		}
 		
-		if(this.x+1 < width && map[(this.x+1)][this.y] == OPEN){
-			neighbors.add(new Square(this.x+1,this.y));
+		if(this.getX()+1 < width && map[(this.getX()+1)][this.getY()] == OPEN){
+			neighbors.add(new Square(this.getX()+1,this.getY()));
 		}
 		
-		if(this.y+1 < height && map[this.x][(this.y+1)] == OPEN){
-			neighbors.add(new Square(this.x,this.y+1));
+		if(this.getY()+1 < height && map[this.getX()][(this.getY()+1)] == OPEN){
+			neighbors.add(new Square(this.getX(),this.getY()+1));
 		}
 		
 		return neighbors;
@@ -97,37 +74,38 @@ public class Square implements Comparable<Square>{
 		final int height = map.length;
 		List<Square> neighbors = new ArrayList<Square>();
 		
-		if(this.y-1 >= 0 && map[this.x][this.y-1] != OPEN){
-			neighbors.add(new Square(this.x,this.y-1));
+		if(this.getY()-1 >= 0 && map[this.getX()][this.getY()-1] != OPEN){
+			neighbors.add(new Square(this.getX(),this.getY()-1));
 		}
 		
-		if(this.x-1 >= 0 && map[this.x-1][this.y] != OPEN){
-			neighbors.add(new Square(this.x-1,this.y));
+		if(this.getX()-1 >= 0 && map[this.getX()-1][this.getY()] != OPEN){
+			neighbors.add(new Square(this.getX()-1,this.getY()));
 		}
 		
-		if(this.x+1 < width && map[this.x+1][this.y] != OPEN){
-			neighbors.add(new Square(this.x+1,this.y));
+		if(this.getX()+1 < width && map[this.getX()+1][this.getY()] != OPEN){
+			neighbors.add(new Square(this.getX()+1,this.getY()));
 		}
 		
-		if(this.y+1 < height && map[this.x][this.y+1] != OPEN){
-			neighbors.add(new Square(this.x,this.y+1));
+		if(this.getY()+1 < height && map[this.getX()][this.getY()+1] != OPEN){
+			neighbors.add(new Square(this.getX(),this.getY()+1));
 		}
 		
 		return neighbors;
 	}
 	
 	public int compareTo(final Square s){
-		return CoordinateUtils.readingOrder(this.x, this.y, s.x, s.y);
+		return CoordinateUtils.readingOrder(this.getX(), this.getY(), s.getX(),
+			s.getY());
 	}
 	
 	@Override
 	public String toString(){
-		return "(" + this.x + "," + y + ")";
+		return "(" + this.getX() + "," + this.getY() + ")";
 	}
 	
 	@Override
 	public int hashCode(){
-		return Objects.hash(this.x, this.y);
+		return Objects.hash(this.getX(), this.getY());
 	}
 	
 	@Override
@@ -146,8 +124,8 @@ public class Square implements Comparable<Square>{
 			Square s = (Square)other;
 			
 			return new EqualsBuilder()
-				.append(this.x, s.x)
-				.append(this.y, s.y)
+				.append(this.getX(), s.getX())
+				.append(this.getY(), s.getY())
 				.isEquals();
 		}
 	}

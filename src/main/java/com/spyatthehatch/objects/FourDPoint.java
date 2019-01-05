@@ -11,17 +11,7 @@ import com.spyatthehatch.util.CoordinateUtils;
  * @version Advent 2018
  *
  */
-public class FourDPoint {
-	/**
-	 * X coordinate.
-	 */
-	private int x;
-	
-	/**
-	 * Y coordinate.
-	 */
-	private int y;
-	
+public class FourDPoint extends Point {	
 	/**
 	 * Z coordinate.
 	 */
@@ -38,9 +28,9 @@ public class FourDPoint {
 	 * @param s String from puzzle input.
 	 */
 	public FourDPoint(final String s) {
+		super(Integer.valueOf(s.split(",")[0]), Integer
+			.valueOf(s.split(",")[1]));
 		final String[] split = s.split(",");
-		this.x = Integer.valueOf(split[0]);
-		this.y = Integer.valueOf(split[1]);
 		this.z = Integer.valueOf(split[2]);
 		this.t = Integer.valueOf(split[3]);
 	}
@@ -52,13 +42,13 @@ public class FourDPoint {
 	 * @return Manhattan distance.
 	 */
 	public int distanceTo(final FourDPoint other){
-		return CoordinateUtils.getManhattanDistance(this.x, this.y, this.z,
-			this.t, other.x, other.y, other.z, other.t);
+		return CoordinateUtils.getManhattanDistance(this.getX(), this.getY(),
+			this.z, this.t, other.getX(), other.getY(), other.z, other.t);
 	}
 	
 	@Override
 	public int hashCode(){
-		return Objects.hash(this.x, this.y, this.z, this.t);
+		return Objects.hash(this.getX(), this.getY(), this.z, this.t);
 	}
 	
 	@Override
@@ -77,8 +67,8 @@ public class FourDPoint {
 			final FourDPoint point = (FourDPoint)o;
 			
 			return new EqualsBuilder()
-				.append(this.x, point.x)
-				.append(this.y, point.y)
+				.append(this.getX(), point.getX())
+				.append(this.getY(), point.getY())
 				.append(this.z, point.z)
 				.append(this.t, point.t)
 				.isEquals();
