@@ -1,4 +1,4 @@
-package com.spyatthehatch.puzzles;
+package com.spyatthehatch.puzzles.y2018;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -8,7 +8,12 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import com.spyatthehatch.objects.fighter.*;
+import com.spyatthehatch.objects.y2018.fighter.BreadthFirstSearch;
+import com.spyatthehatch.objects.y2018.fighter.Elf;
+import com.spyatthehatch.objects.y2018.fighter.Fighter;
+import com.spyatthehatch.objects.y2018.fighter.Goblin;
+import com.spyatthehatch.objects.y2018.fighter.Square;
+import com.spyatthehatch.puzzles.AbstractDay;
 import com.spyatthehatch.util.ResourceReader;
 
 /**
@@ -28,7 +33,7 @@ public class Day15 extends AbstractDay {
 	/**
 	 * Puzzle resource.
 	 */
-	public static final String RESOURCE = "puzzles/day15-list.txt";
+	public static final String RESOURCE = "puzzles/2018/day15-list.txt";
 	
 	/**
 	 * Map of walls, fighters, and open space.

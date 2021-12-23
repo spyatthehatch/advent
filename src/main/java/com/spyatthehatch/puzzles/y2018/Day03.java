@@ -1,9 +1,10 @@
-package com.spyatthehatch.puzzles;
+package com.spyatthehatch.puzzles.y2018;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import com.spyatthehatch.objects.FabricClaim;
+import com.spyatthehatch.objects.y2018.FabricClaim;
+import com.spyatthehatch.puzzles.AbstractDay;
 import com.spyatthehatch.util.ResourceReader;
 
 /**
@@ -24,7 +25,7 @@ public class Day03 extends AbstractDay {
 	/**
 	 * Puzzle resource, list of fabric claims.
 	 */
-	public static final String RESOURCE = "puzzles/day3-list.txt";
+	public static final String RESOURCE = "puzzles/2018/day3-list.txt";
 	
 	/**
 	 * ArrayList of provided fabric claims.

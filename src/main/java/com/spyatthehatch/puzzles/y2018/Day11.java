@@ -1,9 +1,10 @@
-package com.spyatthehatch.puzzles;
+package com.spyatthehatch.puzzles.y2018;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import com.spyatthehatch.objects.FuelCell;
+import com.spyatthehatch.objects.y2018.FuelCell;
+import com.spyatthehatch.puzzles.AbstractDay;
 
 /**
  * Day eleven solutions.

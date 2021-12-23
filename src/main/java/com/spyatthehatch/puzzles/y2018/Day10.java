@@ -1,12 +1,13 @@
-package com.spyatthehatch.puzzles;
+package com.spyatthehatch.puzzles.y2018;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import javax.swing.JFrame;
 
-import com.spyatthehatch.objects.Pixel;
-import com.spyatthehatch.objects.PixelPainter;
+import com.spyatthehatch.objects.y2018.Pixel;
+import com.spyatthehatch.objects.y2018.PixelPainter;
+import com.spyatthehatch.puzzles.AbstractDay;
 import com.spyatthehatch.util.ResourceReader;
 
 /**
@@ -38,7 +39,7 @@ public class Day10 extends AbstractDay {
 	/**
 	 * Puzzle resource.
 	 */
-	public static final String RESOURCE = "puzzles/day10-list.txt";
+	public static final String RESOURCE = "puzzles/2018/day10-list.txt";
 	
 	/**
 	 * List of pixels.

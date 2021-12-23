@@ -1,10 +1,11 @@
-package com.spyatthehatch.puzzles;
+package com.spyatthehatch.puzzles.y2018;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import com.spyatthehatch.objects.Constellation;
-import com.spyatthehatch.objects.FourDPoint;
+import com.spyatthehatch.objects.y2018.Constellation;
+import com.spyatthehatch.objects.y2018.FourDPoint;
+import com.spyatthehatch.puzzles.AbstractDay;
 import com.spyatthehatch.util.ResourceReader;
 
 /**
@@ -62,7 +63,7 @@ public class Day25 extends AbstractDay {
 	/**
 	 * Puzzle resource.
 	 */
-	public static final String RESOURCE = "puzzles/day25-list.txt";
+	public static final String RESOURCE = "puzzles/2018/day25-list.txt";
 	
 	/**
 	 * List of points.

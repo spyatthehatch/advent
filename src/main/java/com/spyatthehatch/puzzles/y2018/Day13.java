@@ -1,9 +1,10 @@
-package com.spyatthehatch.puzzles;
+package com.spyatthehatch.puzzles.y2018;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import com.spyatthehatch.objects.Cart;
+import com.spyatthehatch.objects.y2018.Cart;
+import com.spyatthehatch.puzzles.AbstractDay;
 import com.spyatthehatch.util.ResourceReader;
 
 /**
@@ -27,7 +28,7 @@ public class Day13 extends AbstractDay {
 	/**
 	 * Puzzle resource.
 	 */
-	public static final String RESOURCE = "puzzles/day13-list.txt";
+	public static final String RESOURCE = "puzzles/2018/day13-list.txt";
 	
 	/**
 	 * The map of roads, without carts.

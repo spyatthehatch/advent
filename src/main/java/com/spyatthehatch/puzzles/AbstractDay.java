@@ -17,6 +17,11 @@ public abstract class AbstractDay implements Day {
 	   LoggerFactory.getLogger(AbstractDay.class);
 	
 	/**
+	 * The Advent year for this puzzle.
+	 */
+	protected String year = null;
+	
+	/**
 	 * Day number for this day.
 	 */
 	protected String dayNum = null;
@@ -35,7 +40,7 @@ public abstract class AbstractDay implements Day {
 	 * Output the solutions to this day's puzzles.
 	 */
 	public void report() {
-		LOGGER.info("Day " + dayNum + ", Puzzle 1 solution: " + solutionOne);
-		LOGGER.info("Day " + dayNum + ", Puzzle 2 solution: " + solutionTwo);
+		LOGGER.info(this.year + " Day " + this.dayNum + ", Puzzle 1 solution: " + this.solutionOne);
+		LOGGER.info(this.year + " Day " + this.dayNum + ", Puzzle 2 solution: " + this.solutionTwo);
 	}
 }

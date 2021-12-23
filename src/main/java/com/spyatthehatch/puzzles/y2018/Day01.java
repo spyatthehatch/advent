@@ -1,8 +1,9 @@
-package com.spyatthehatch.puzzles;
+package com.spyatthehatch.puzzles.y2018;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import com.spyatthehatch.puzzles.AbstractDay;
 import com.spyatthehatch.util.ResourceReader;
 
 /**
@@ -40,7 +41,7 @@ public class Day01 extends AbstractDay {
 	/**
 	 * Puzzle resource, list of frequencies.
 	 */
-	public static final String RESOURCE = "puzzles/day1-list.txt";
+	public static final String RESOURCE = "puzzles/2018/day1-list.txt";
 	
 	/**
 	 * ArrayList of provided "frequencies".

@@ -1,8 +1,9 @@
-package com.spyatthehatch.puzzles;
+package com.spyatthehatch.puzzles.y2018;
 
 import java.util.List;
 
-import com.spyatthehatch.objects.Region;
+import com.spyatthehatch.objects.y2018.Region;
+import com.spyatthehatch.puzzles.AbstractDay;
 
 /**
  * Day twenty two solutions.

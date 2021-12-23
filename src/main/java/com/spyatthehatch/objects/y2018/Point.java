@@ -1,4 +1,6 @@
-package com.spyatthehatch.objects;
+package com.spyatthehatch.objects.y2018;
+
+import org.apache.commons.lang3.builder.EqualsBuilder;
 
 /**
  * 
@@ -62,5 +64,32 @@ public class Point {
 	 */
 	public int getY() {
 		return y;
+	}
+	
+	@Override
+	public boolean equals(final Object other){
+		if(this == other){
+			return true;
+		}
+		
+		if(other == null){
+			return false;
+		}
+		
+		if(this.getClass() != other.getClass()){
+			return false;
+		} else {
+			Point p = (Point)other;
+			
+			return new EqualsBuilder()
+				.append(this.x, p.x)
+				.append(this.y, p.y)
+				.isEquals();
+		}
+	}
+	
+	@Override
+	public String toString(){
+		return "(" + this.x + ", " + this.y + ")";
 	}
 }

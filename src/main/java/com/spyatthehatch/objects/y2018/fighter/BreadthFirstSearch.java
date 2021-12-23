@@ -1,4 +1,4 @@
-package com.spyatthehatch.objects.fighter;
+package com.spyatthehatch.objects.y2018.fighter;
 
 import java.util.ArrayList;
 import java.util.Collections;

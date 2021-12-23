@@ -1,4 +1,4 @@
-package com.spyatthehatch.objects;
+package com.spyatthehatch.objects.y2018;
 
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.builder.ToStringBuilder;

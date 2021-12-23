@@ -1,11 +1,12 @@
-package com.spyatthehatch.puzzles;
+package com.spyatthehatch.puzzles.y2018;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.spyatthehatch.objects.Coordinate;
+import com.spyatthehatch.objects.y2018.Coordinate;
+import com.spyatthehatch.puzzles.AbstractDay;
 import com.spyatthehatch.util.ResourceReader;
 
 /**
@@ -34,7 +35,7 @@ public class Day06 extends AbstractDay {
 	/**
 	 * Puzzle resource, list of coordinates.
 	 */
-	public static final String RESOURCE = "puzzles/day6-list.txt";
+	public static final String RESOURCE = "puzzles/2018/day6-list.txt";
 	
 	/**
 	 * List of Coordinate objects.

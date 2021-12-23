@@ -1,4 +1,4 @@
-package com.spyatthehatch.objects.immune;
+package com.spyatthehatch.objects.y2018.immune;
 
 /**
  * Enum for attack types.

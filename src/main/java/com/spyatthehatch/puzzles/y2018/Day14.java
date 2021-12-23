@@ -1,7 +1,9 @@
-package com.spyatthehatch.puzzles;
+package com.spyatthehatch.puzzles.y2018;
 
 import org.apache.commons.lang3.StringUtils;
-import com.spyatthehatch.objects.Scoreboard;
+
+import com.spyatthehatch.objects.y2018.Scoreboard;
+import com.spyatthehatch.puzzles.AbstractDay;
 
 /**
  * Day fourteen solutions.

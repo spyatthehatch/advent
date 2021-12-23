@@ -32,33 +32,31 @@ public class Advent {
 	 * @param args Arguments - none.
 	 */
 	public static void main (String[] args) {		
-		LOGGER.info("Begin Advent app.");
+//		LOGGER.info("Begin Advent 2020 puzzles.");
+//		days.add(new com.spyatthehatch.puzzles.y2020.Day01());
+//		days.add(new com.spyatthehatch.puzzles.y2020.Day02());
+//		days.add(new com.spyatthehatch.puzzles.y2020.Day03());
+//		days.add(new com.spyatthehatch.puzzles.y2020.Day04());
 		
-		days.add(new Day01());
-		days.add(new Day02());
-		days.add(new Day03());
-		days.add(new Day04());
-		days.add(new Day05());
-		days.add(new Day06());
-		days.add(new Day07());
-		days.add(new Day08());
-		days.add(new Day09());
-		days.add(new Day10());
-		days.add(new Day11());
-		days.add(new Day12());
-		days.add(new Day13());
-		days.add(new Day14());
-		days.add(new Day15());
-		days.add(new Day16());
-		days.add(new Day17());
-		days.add(new Day18());
-		days.add(new Day19());
-		days.add(new Day20());
-		days.add(new Day21());
-		days.add(new Day22());
-		days.add(new Day23());
-		days.add(new Day24());
-		days.add(new Day25());
+		LOGGER.info("Begin Advent 2021 puzzles.");
+//		days.add(new com.spyatthehatch.puzzles.y2021.Day01());
+//		days.add(new com.spyatthehatch.puzzles.y2021.Day02());
+//		days.add(new com.spyatthehatch.puzzles.y2021.Day03());
+//		days.add(new com.spyatthehatch.puzzles.y2021.Day04());
+//		days.add(new com.spyatthehatch.puzzles.y2021.Day05());
+//		days.add(new com.spyatthehatch.puzzles.y2021.Day06());
+//		days.add(new com.spyatthehatch.puzzles.y2021.Day07());
+//		days.add(new com.spyatthehatch.puzzles.y2021.Day08());
+//		days.add(new com.spyatthehatch.puzzles.y2021.Day09());
+//		days.add(new com.spyatthehatch.puzzles.y2021.Day10());
+//		days.add(new com.spyatthehatch.puzzles.y2021.Day11());
+//		days.add(new com.spyatthehatch.puzzles.y2021.Day12());
+//		days.add(new com.spyatthehatch.puzzles.y2021.Day13());
+//		days.add(new com.spyatthehatch.puzzles.y2021.Day14());
+//		days.add(new com.spyatthehatch.puzzles.y2021.Day15());
+//		days.add(new com.spyatthehatch.puzzles.y2021.Day16());
+//		days.add(new com.spyatthehatch.puzzles.y2021.Day17());
+		days.add(new com.spyatthehatch.puzzles.y2021.Day18());
 		
 		for(final Day day : days) {
 			day.puzzleOne();

@@ -9,6 +9,8 @@ import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.spyatthehatch.objects.y2018.Scoreboard;
+
 /**
  * Scoreboard unit tests.
  * 

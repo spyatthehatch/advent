@@ -61,4 +61,20 @@ public class ResourceReader {
 		LOGGER.trace("Read in " + list.size() + " elements.");
 		return list;
 	}
+	
+	/**
+	 * Return a line from a file.
+	 */
+	public String toString() {
+		String s = null;
+		
+		try {
+			s = this.br.readLine();
+		} catch (final IOException e) {
+			LOGGER.warn("I/O error on read from resource.");
+			throw new RuntimeException(e.getMessage());
+		}
+		
+		return s;
+	}
 }

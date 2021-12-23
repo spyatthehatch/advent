@@ -1,9 +1,10 @@
-package com.spyatthehatch.puzzles;
+package com.spyatthehatch.puzzles.y2018;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import com.spyatthehatch.objects.Node;
+import com.spyatthehatch.objects.y2018.Node;
+import com.spyatthehatch.puzzles.AbstractDay;
 import com.spyatthehatch.util.ResourceReader;
 
 /**
@@ -36,7 +37,7 @@ public class Day08 extends AbstractDay {
 	/**
 	 * Puzzle resource, list of numbers.
 	 */
-	public static final String RESOURCE = "puzzles/day8-list.txt";
+	public static final String RESOURCE = "puzzles/2018/day8-list.txt";
 	
 	/**
 	 * Input of numbers.

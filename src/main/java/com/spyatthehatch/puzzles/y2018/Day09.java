@@ -1,6 +1,7 @@
-package com.spyatthehatch.puzzles;
+package com.spyatthehatch.puzzles.y2018;
 
-import com.spyatthehatch.objects.MarbleGame;
+import com.spyatthehatch.objects.y2018.MarbleGame;
+import com.spyatthehatch.puzzles.AbstractDay;
 
 /**
  * Day nine solutions.

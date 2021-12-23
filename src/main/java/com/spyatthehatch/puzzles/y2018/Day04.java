@@ -1,4 +1,4 @@
-package com.spyatthehatch.puzzles;
+package com.spyatthehatch.puzzles.y2018;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -6,9 +6,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.spyatthehatch.objects.Event;
-import com.spyatthehatch.objects.Guard;
-import com.spyatthehatch.objects.Event.Action;
+import com.spyatthehatch.objects.y2018.Event;
+import com.spyatthehatch.objects.y2018.Guard;
+import com.spyatthehatch.objects.y2018.Event.Action;
+import com.spyatthehatch.puzzles.AbstractDay;
 import com.spyatthehatch.util.ResourceReader;
 
 /**
@@ -29,7 +30,7 @@ public class Day04 extends AbstractDay {
 	/**
 	 * Puzzle resource, list of events.
 	 */
-	public static final String RESOURCE = "puzzles/day4-list.txt";
+	public static final String RESOURCE = "puzzles/2018/day4-list.txt";
 	
 	/**
 	 * List of event objects.

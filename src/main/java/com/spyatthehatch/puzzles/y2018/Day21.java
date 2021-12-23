@@ -1,7 +1,8 @@
-package com.spyatthehatch.puzzles;
+package com.spyatthehatch.puzzles.y2018;
 
 import java.util.List;
 
+import com.spyatthehatch.puzzles.AbstractDay;
 import com.spyatthehatch.util.ResourceReader;
 
 /**
@@ -19,7 +20,7 @@ public class Day21 extends AbstractDay {
 	/**
 	 * Puzzle resource.
 	 */
-	public static final String RESOURCE = "puzzles/day21-list.txt";
+	public static final String RESOURCE = "puzzles/2018/day21-list.txt";
 	
 	/**
 	 * Constructor for Day 21 puzzles.

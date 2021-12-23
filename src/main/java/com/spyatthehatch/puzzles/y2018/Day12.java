@@ -1,11 +1,12 @@
-package com.spyatthehatch.puzzles;
+package com.spyatthehatch.puzzles.y2018;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.spyatthehatch.objects.PlantRule;
+import com.spyatthehatch.objects.y2018.PlantRule;
+import com.spyatthehatch.puzzles.AbstractDay;
 import com.spyatthehatch.util.ResourceReader;
 
 /**
@@ -30,7 +31,7 @@ public class Day12 extends AbstractDay {
 	/**
 	 * Puzzle resource.
 	 */
-	public static final String RESOURCE = "puzzles/day12-list.txt";
+	public static final String RESOURCE = "puzzles/2018/day12-list.txt";
 	
 	/**
 	 * HashMap of rules, by pattern.

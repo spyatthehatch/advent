@@ -1,4 +1,4 @@
-package com.spyatthehatch.objects;
+package com.spyatthehatch.objects.y2018;
 
 import java.awt.Color;
 import java.awt.Dimension;

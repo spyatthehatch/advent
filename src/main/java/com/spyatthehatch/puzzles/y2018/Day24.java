@@ -1,4 +1,4 @@
-package com.spyatthehatch.puzzles;
+package com.spyatthehatch.puzzles.y2018;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -6,9 +6,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.spyatthehatch.objects.immune.Group;
-import com.spyatthehatch.objects.immune.Immunity;
-import com.spyatthehatch.objects.immune.Infection;
+import com.spyatthehatch.objects.y2018.immune.Group;
+import com.spyatthehatch.objects.y2018.immune.Immunity;
+import com.spyatthehatch.objects.y2018.immune.Infection;
+import com.spyatthehatch.puzzles.AbstractDay;
 import com.spyatthehatch.util.ResourceReader;
 
 /**
@@ -28,7 +29,7 @@ public class Day24 extends AbstractDay {
 	/**
 	 * Puzzle resource.
 	 */
-	public static final String RESOURCE = "puzzles/day24-list.txt";
+	public static final String RESOURCE = "puzzles/2018/day24-list.txt";
 	
 	/**
 	 * Map of Attacker objects by initiative value as the key.

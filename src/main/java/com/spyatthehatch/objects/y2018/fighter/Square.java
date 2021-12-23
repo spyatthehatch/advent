@@ -1,11 +1,11 @@
-package com.spyatthehatch.objects.fighter;
+package com.spyatthehatch.objects.y2018.fighter;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 
-import com.spyatthehatch.objects.Point;
+import com.spyatthehatch.objects.y2018.Point;
 import com.spyatthehatch.util.CoordinateUtils;
 
 /**

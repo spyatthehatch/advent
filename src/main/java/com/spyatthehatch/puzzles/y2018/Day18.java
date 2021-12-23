@@ -1,10 +1,11 @@
-package com.spyatthehatch.puzzles;
+package com.spyatthehatch.puzzles.y2018;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.spyatthehatch.objects.Acres;
+import com.spyatthehatch.objects.y2018.Acres;
+import com.spyatthehatch.puzzles.AbstractDay;
 import com.spyatthehatch.util.ResourceReader;
 
 /**
@@ -23,7 +24,7 @@ public class Day18 extends AbstractDay {
 	/**
 	 * Puzzle resource.
 	 */
-	public static final String RESOURCE = "puzzles/day18-list.txt";
+	public static final String RESOURCE = "puzzles/2018/day18-list.txt";
 	
 	/**
 	 * Given width of acres.

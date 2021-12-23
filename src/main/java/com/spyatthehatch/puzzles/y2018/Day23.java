@@ -1,9 +1,10 @@
-package com.spyatthehatch.puzzles;
+package com.spyatthehatch.puzzles.y2018;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import com.spyatthehatch.objects.Nanobot;
+import com.spyatthehatch.objects.y2018.Nanobot;
+import com.spyatthehatch.puzzles.AbstractDay;
 import com.spyatthehatch.util.ResourceReader;
 
 /**
@@ -21,7 +22,7 @@ public class Day23 extends AbstractDay {
 	/**
 	 * Puzzle resource.
 	 */
-	public static final String RESOURCE = "puzzles/day23-list.txt";
+	public static final String RESOURCE = "puzzles/2018/day23-list.txt";
 	
 	private List<Nanobot> bots = new ArrayList<Nanobot>();
 	

@@ -1,7 +1,8 @@
-package com.spyatthehatch.objects;
+package com.spyatthehatch.objects.y2018;
 
 import java.util.Objects;
 import org.apache.commons.lang3.builder.EqualsBuilder;
+
 import com.spyatthehatch.util.CoordinateUtils;
 
 /**
